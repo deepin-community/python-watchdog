@@ -1,0 +1,34 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=watchdog
+
+ifeq (,$(findstring nodoc,$(DEB_BUILD_OPTIONS)))
+%:
+	dh $@ --with sphinxdoc --buildsystem=pybuild
+
+override_dh_sphinxdoc:
+	python3 -m sphinx -b man docs/source docs/build/man
+	sed -i 's/.TH "WATCHDOG" "1"/.TH "WATCHDOG" "3"/g' docs/build/man/watchdog.1
+	cp -f docs/build/man/watchdog.1 docs/build/man/watchdog3.1
+	PYTHONPATH=. python3 -m sphinx -b html docs/source $(CURDIR)/debian/python-watchdog/usr/share/doc/python-watchdog/html
+	PYTHONPATH=. python3 -m sphinx -b html docs/source $(CURDIR)/debian/python3-watchdog/usr/share/doc/python3-watchdog/html
+	dh_sphinxdoc -O--buildsystem=pybuild
+
+else
+%:
+	dh $@ --buildsystem=pybuild
+endif
+
+execute_after_dh_clean:
+	rm -rf docs/build .pytest_cache .coverage .pybuild
+
+ifeq (,$(findstring nocheck,$(DEB_BUILD_OPTIONS)))
+execute_before_dh_auto_test:
+	mv tests/test_fsevents.py tests/skip_test_fsevents.py
+	mv tests/test_observers_winapi.py tests/skip_test_observers_winapi.py
+
+execute_after_dh_auto_test:
+	mv tests/skip_test_fsevents.py tests/test_fsevents.py
+	mv tests/skip_test_observers_winapi.py tests/test_observers_winapi.py
+
+endif

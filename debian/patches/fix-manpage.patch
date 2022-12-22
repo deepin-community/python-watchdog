@@ -1,0 +1,11 @@
+--- a/src/watchdog/utils/dirsnapshot.py
++++ b/src/watchdog/utils/dirsnapshot.py
+@@ -22,7 +22,7 @@
+ :author: yesudeep@google.com (Yesudeep Mangalapilly)
+ :author: contact@tiger-222.fr (Mickaël Schoentgen)
+ 
+-.. ADMONITION:: Where are the moved events? They "disappeared"
++.. ADMONITION:: Where are the moved events? They 'disappeared'
+ 
+         This implementation does not take partition boundaries
+         into consideration. It will only work when the directory

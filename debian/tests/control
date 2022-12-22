@@ -1,0 +1,3 @@
+Test-Command: /usr/bin/watchmedo --version
+Restrictions: superficial
+Depends: @

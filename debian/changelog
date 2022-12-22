@@ -1,0 +1,103 @@
+python-watchdog (1.0.2-2) unstable; urgency=medium
+
+  * Fix dependencies (closes: #982066)
+
+ -- Julian Gilbey <jdg@debian.org>  Sat, 06 Feb 2021 19:59:54 +0000
+
+python-watchdog (1.0.2-1) unstable; urgency=medium
+
+  [ Julian Gilbey ]
+  * Team upload.
+
+  [ Ondřej Nový ]
+  * Bump Standards-Version to 4.4.1.
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+  [ Julian Gilbey ]
+  * New upstream version.
+  * Bump Standards-Version to 4.5.1.
+  * Support nodoc and nocheck build options
+
+ -- Julian Gilbey <jdg@debian.org>  Thu, 04 Feb 2021 08:54:27 +0000
+
+python-watchdog (0.9.0-3) unstable; urgency=medium
+
+  * Team upload.
+  * Add Breaks+Replace of python-watchdog (Closes: #940494).
+
+ -- Ondřej Nový <onovy@debian.org>  Mon, 16 Sep 2019 18:01:26 +0200
+
+python-watchdog (0.9.0-2) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Use 'python3 -m sphinx' instead of sphinx-build for building docs.
+  * Use debhelper-compat instead of debian/compat.
+  [ gustavo panizzo ]
+  * [2a486c] Drop the Python 2 package
+  * [fccdd0] Install watchmedo3 as watchmedo
+  * [6b7f98] Use debhelper-compat 12
+  * [734ff1] Install examples
+  * [da976d] Remove unused licenses from d/copyright
+  * [a8c5fd] Standards version 4.4.0
+  * [58b5b5] Add a superficial autopkgtest
+  * [7882ac] Add a DEP12 upstream metadata file
+
+ -- gustavo panizzo <gfa@zumbi.com.ar>  Sat, 14 Sep 2019 18:31:27 +0000
+
+python-watchdog (0.9.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Packaging moved under the umbrella of the DPMT, adopting its policy and
+    dropping the previous git packaging repository.
+  * [ab83af] Dropping old patches
+  * [aa5f0a] Add d/gbp.conf
+  * [c3d54a] Remove .pytest_cache in dh_clean
+  * [7f1da6] Remove .coverage in dh_clean
+  * [c3322c] Remove .pybuild in dh_clean
+  * [173778] Remove generated upstream changelog
+  * [acfd17] Remove tests that fail
+  * [ff2e00] Increase the compat level
+  * [81bbd9] Use a secure URI in the Homepage field
+  * [a2dc03] Use python3-sphinx to build the documentation
+  * [6cccfd] Use a secure URI for the copyright format url
+  * [4ec5b5] Fix the ordering on d/copyright
+  * [4aaac4] Bump the Standards Version, no changes required
+  * [b6efc8] Use a secure uri in d/watch
+  * [091a83] No longer remove src/watchdog.egg-info in dh_clean
+  * [d21ac8] Remove non-existent entries from d/copyright
+  * [ad8c05] Update copyright years
+  * [5f9858] Remove trailing whitespaces from d/rules
+
+ -- gustavo panizzo <gfa@zumbi.com.ar>  Sat, 01 Dec 2018 17:33:17 +0800
+
+python-watchdog (0.8.3-2) unstable; urgency=medium
+
+  * Fix tests for Python 3. (Closes: #801726).
+
+ -- Gustavo Panizzo <gfa@zumbi.com.ar>  Tue, 20 Oct 2015 16:45:08 +0800
+
+python-watchdog (0.8.3-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Packaging moved to git.
+  * Provide a Python 3 package. (Closes: #776599)
+
+ -- gustavo panizzo <gfa@zumbi.com.ar>  Mon, 13 Apr 2015 11:03:08 +0800
+
+python-watchdog (0.7.0-2) experimental; urgency=medium
+
+  * Enable Python 3.
+  * Change buildsystem to pybuild.
+  * Add a simple patch to be able to build twice.
+  * Updated standards version, no changes needed.
+
+ -- gustavo panizzo <gfa@zumbi.com.ar>  Mon, 02 Feb 2015 23:19:45 +0800
+
+python-watchdog (0.7.0-1) unstable; urgency=low
+
+  * Initial release. (Closes: #735481)
+
+ -- gustavo panizzo <gfa@zumbi.com.ar>  Sun, 26 Jan 2014 10:29:40 -0300
