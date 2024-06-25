@@ -4,14 +4,16 @@ Upstream-Contact: Mickaël Schoentgen <contact@tiger-222.fr>
 Source: https://github.com/gorakhargosh/watchdog
 
 Files: *
-Copyright: (c) 2010/2011, Yesudeep Mangalapilly <yesudeep@gmail.com> and/or
+Copyright: (c) 2010/2011/2010-2023, Yesudeep Mangalapilly <yesudeep@gmail.com>
+           and/or
            (c) 2012 Google, Inc & contributors and/or
            (c) 2014, Thomas Amland <thomas.amland@gmail.com>
 License: Apache-2
+Comment: "2010-2023" in docs/source/conf.py
 
 Files: debian/*
 Copyright: (c) 2014-2018, gustavo panizzo <gfa@zumbi.com.ar>
-           (c) 2021 Julian Gilbey <jdg@debian.org>
+           (c) 2021- Julian Gilbey <jdg@debian.org>
 License: Apache-2
 
 Files: src/watchdog/utils/echo.py

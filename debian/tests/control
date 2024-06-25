@@ -1,3 +1,11 @@
 Test-Command: /usr/bin/watchmedo --version
 Restrictions: superficial
 Depends: @
+
+Tests: pytest
+Depends: python3-all,
+         python3-eventlet,
+         python3-flaky,
+         python3-pytest-cov,
+         python3-pytest-timeout,
+         @

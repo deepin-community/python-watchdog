@@ -1,3 +1,4 @@
-version=3
-opts=uversionmangle=s/(rc|a|b|c)/~$1/ \
-https://pypi.debian.net/watchdog/watchdog-(.+)\.(?:zip|tgz|tbz|txz|(?:tar\.(?:gz|bz2|xz)))
+version=4
+opts="filenamemangle=s%(?:.*?)?v?(\d[\d.]*@ARCHIVE_EXT@)%@PACKAGE@-$1%" \
+    https://github.com/gorakhargosh/watchdog/tags \
+    (?:.*?/)?v?@ANY_VERSION@@ARCHIVE_EXT@
