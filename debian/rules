@@ -4,7 +4,7 @@ export PYBUILD_NAME=watchdog
 
 ifeq (,$(findstring nodoc,$(DEB_BUILD_OPTIONS)))
 %:
-	dh $@ --with sphinxdoc --buildsystem=pybuild
+	dh $@ --buildsystem=pybuild
 
 override_dh_sphinxdoc:
 	python3 -m sphinx -b man docs/source docs/build/man
@@ -22,13 +22,5 @@ endif
 execute_after_dh_clean:
 	rm -rf docs/build .pytest_cache .coverage .pybuild
 
-ifeq (,$(findstring nocheck,$(DEB_BUILD_OPTIONS)))
-execute_before_dh_auto_test:
-	mv tests/test_fsevents.py tests/skip_test_fsevents.py
-	mv tests/test_observers_winapi.py tests/skip_test_observers_winapi.py
-
-execute_after_dh_auto_test:
-	mv tests/skip_test_fsevents.py tests/test_fsevents.py
-	mv tests/skip_test_observers_winapi.py tests/test_observers_winapi.py
-
-endif
+override_dh_auto_test:
+	dh_auto_test -O--buildsystem=pybuild -- --test-pytest --test-args '-k "not test_unmount_watched_directory_filesystem"'

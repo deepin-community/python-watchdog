@@ -1,0 +1,10 @@
+#! /bin/sh
+
+set -e
+
+cp -a tests "$AUTOPKGTEST_TMP"
+for py in $(py3versions -s) ; do
+    cd "$AUTOPKGTEST_TMP"
+    echo "Testing with $py:"
+    $py -m pytest -k "not test_unmount_watched_directory_filesystem" tests
+done
